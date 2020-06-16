@@ -16,7 +16,6 @@ pipeline {
           }
         }
         stage('Build docker'){
-          agent any
           steps{
             sh 'hadolint Dockerfile && ./bin/update_docker.sh'
           }
