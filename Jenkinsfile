@@ -19,7 +19,7 @@ pipeline {
         stage('Build docker'){
           steps{
             withEnv(["HOME=${env.WORKSPACE}"]) {
-                sh 'hadolint Dockerfile && ./bin/update_docker.sh'
+                sh 'hadolint Dockerfile && chmod +x bin/update_docker.sh && sh bin/update_docker.sh'
               }
           }
         }
