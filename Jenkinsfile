@@ -14,9 +14,6 @@ pipeline {
           steps{
             withEnv(["HOME=${env.WORKSPACE}"]) {
                 sh 'python3 -m pylint app.py \
-                && apt install wget \
-                && wget https://github.com/hadolint/hadolint/releases/download/v1.18.0/hadolint-Linux-x86_64 hadolint \
-                && mv hadolint /usr/bin \
                 && hadolint Dockerfile'
               }
           }
