@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build'){
             steps{
-                sh 'pip install pylint'
+                sh 'pip install --user pylint'
             }
         }
         stage('Lint'){
