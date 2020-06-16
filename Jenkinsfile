@@ -6,7 +6,7 @@ pipeline {
         stage('Build'){
             steps{
               withEnv(["HOME=${env.WORKSPACE}"]) {
-                sh 'pip3 install  --user pylint'
+                sh 'pip3 install  --user pylint flask'
               }
             }
         }
