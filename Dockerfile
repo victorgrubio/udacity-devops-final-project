@@ -1,4 +1,4 @@
-FROM python:3.7.3-strech-slim
+FROM python:3.6.10-slim-stretch
 WORKDIR /opt/app
 COPY . .
 RUN pip install -r requirements.txt

@@ -1,6 +1,10 @@
 pipeline {
+    environment {
+      registry = "victorgrubio/udacity-devops-final-project"
+      registryCredential = 'dockerhub'
+      dockerImage = ''
+    }
     agent any
-    
     stages {
         stage('Build'){
             steps{
