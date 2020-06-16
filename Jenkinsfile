@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build'){
             steps{
-                sh 'pip install --no-cache-dir --user pylint'
+                sh 'pip3 install --no-cache-dir --user pylint'
             }
         }
         stage('Lint'){
