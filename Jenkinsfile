@@ -12,7 +12,9 @@ pipeline {
         }
         stage('Lint'){
           steps{
-            sh 'pylint app.py \
+            
+            sh '. venv/bin/activate \ 
+                && pylint app.py \
                 && wget https://github.com/hadolint/hadolint/releases/download/v1.18.0/hadolint-Linux-x86_64 hadolint \
                 && mv hadolint /usr/bin \
                 && hadolint Dockerfile'
