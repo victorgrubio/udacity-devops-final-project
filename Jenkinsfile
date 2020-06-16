@@ -13,14 +13,14 @@ pipeline {
         stage('Lint'){
           steps{
             withEnv(["HOME=${env.WORKSPACE}"]) {
-                sh 'python3 -m pylint app.py \
-                && hadolint Dockerfile'
+                sh 'python3 -m pylint app.py'
               }
           }
         }
         stage('Build docker'){
+          agent any
           steps{
-            sh './bin/update_docker.sh'
+            sh 'hadolint Dockerfile && ./bin/update_docker.sh'
           }
         }
     }
