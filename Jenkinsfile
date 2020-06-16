@@ -6,14 +6,13 @@ pipeline {
         stage('Build'){
             steps{
               withEnv(["HOME=${env.WORKSPACE}"]) {
-                sh 'python3 -m venv venv && . venv/bin/activate && pip3 install --no-cache-dir --user pylint'
+                sh 'pip3 install pylint'
               }
             }
         }
         stage('Lint'){
           steps{
-            sh ' . venv/bin/activate \
-                && python3 -m pylint app.py \
+            sh 'python3 -m pylint app.py \
                 && wget https://github.com/hadolint/hadolint/releases/download/v1.18.0/hadolint-Linux-x86_64 hadolint \
                 && mv hadolint /usr/bin \
                 && hadolint Dockerfile'
