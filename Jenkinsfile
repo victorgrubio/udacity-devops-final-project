@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build'){
             steps{
-                sh 'python3 -m venv venv && source venv/bin/activate && pip3 install --no-cache-dir --user pylint'
+                sh 'python3 -m venv venv && . venv/bin/activate && pip3 install --no-cache-dir --user pylint'
             }
         }
         stage('Lint'){
