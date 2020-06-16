@@ -5,7 +5,9 @@ pipeline {
     stages {
         stage('Build'){
             steps{
+              withEnv(["HOME=${env.WORKSPACE}"]) {
                 sh 'python3 -m venv venv && . venv/bin/activate && pip3 install --no-cache-dir --user pylint'
+              }
             }
         }
         stage('Lint'){
