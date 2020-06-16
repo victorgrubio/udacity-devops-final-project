@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    
     stages {
         stage('Build'){
             steps{
@@ -17,7 +18,9 @@ pipeline {
         }
         stage('Build docker'){
           steps{
-            sh 'hadolint Dockerfile && ./bin/update_docker.sh'
+            withEnv(["HOME=${env.WORKSPACE}"]) {
+                sh 'hadolint Dockerfile && ./bin/update_docker.sh'
+              }
           }
         }
     }
