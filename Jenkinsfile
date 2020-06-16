@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-      docker { image 'python:3.6.10-slim-stretch'}
-    }
+    agent any
     stages {
         stage('Build'){
             steps{
