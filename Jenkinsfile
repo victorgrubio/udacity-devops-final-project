@@ -12,10 +12,12 @@ pipeline {
         }
         stage('Lint'){
           steps{
-            sh 'python3 -m pylint app.py \
+            withEnv(["HOME=${env.WORKSPACE}"]) {
+                sh 'python3 -m pylint app.py \
                 && wget https://github.com/hadolint/hadolint/releases/download/v1.18.0/hadolint-Linux-x86_64 hadolint \
                 && mv hadolint /usr/bin \
                 && hadolint Dockerfile'
+              }
           }
         }
         stage('Build docker'){
