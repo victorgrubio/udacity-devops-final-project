@@ -1,0 +1,26 @@
+[
+  {
+    "ParameterKey":"StackName",
+    "ParameterValue":"final-project-network"
+  },
+  {
+		"ParameterKey":"ServiceName",
+		"ParameterValue":"final-project-app"
+  },
+  {
+		"ParameterKey":"ImageUrl",
+		"ParameterValue":"docker.io/victorgrubio/udacity-devops-final-project:1.0.1"
+  },
+  {
+		"ParameterKey":"ContainerPort",
+		"ParameterValue":"5000"
+  },
+  {
+		"ParameterKey":"HealthCheckPath",
+		"ParameterValue":"/version"
+  },
+  {
+		"ParameterKey":"HealthCheckIntervalSeconds",
+		"ParameterValue":"90"
+	}
+]

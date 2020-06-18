@@ -4,7 +4,7 @@ Main Flask APP
 from flask import Flask
 app = Flask(__name__)
 
-VERSION = "v1"
+VERSION = "1.0.1"
 @app.route('/')
 def hello():
     """
@@ -21,4 +21,4 @@ def version():
     return f"We are using version {VERSION}"
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port='5000')

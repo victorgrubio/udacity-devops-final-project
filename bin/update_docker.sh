@@ -1,3 +1,4 @@
 #!/bin/bash
-docker build -t victorgrubio/udacity-devops-final-project:1.0.0 .
-docker push victorgrubio/udacity-devops-final-project:1.0.0
+VERSION=1.0.1
+docker build -t victorgrubio/udacity-devops-final-project:$VERSION .
+docker push victorgrubio/udacity-devops-final-project:$VERSION
