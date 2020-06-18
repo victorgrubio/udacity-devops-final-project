@@ -26,7 +26,7 @@ pipeline {
               sh 'hadolint Dockerfile'
             }
             script {
-              docker.withRegistry( '', registryCredential ) {
+              docker.withRegistry( '', registryCredential) {
                 dockerImage = docker.build registry + ":1.0.0"
                 dockerImage.push()
               }
