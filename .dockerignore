@@ -1,4 +1,6 @@
 bin
+screenshots
+cloud-formation
 
 # Security keys
 *.ppk
