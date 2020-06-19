@@ -27,7 +27,7 @@ pipeline {
         }
         script {
           docker.withRegistry( '', registryCredential) {
-            dockerImage = docker.build registry + ":1.0.0"
+            dockerImage = docker.build registry + ":1.0.2"
             dockerImage.push()
           }
         }
