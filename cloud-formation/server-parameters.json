@@ -9,7 +9,7 @@
   },
   {
 		"ParameterKey":"ImageUrl",
-		"ParameterValue":"docker.io/victorgrubio/udacity-devops-final-project:1.0.1"
+		"ParameterValue":"docker.io/victorgrubio/udacity-devops-final-project:1.0.2"
   },
   {
 		"ParameterKey":"ContainerPort",

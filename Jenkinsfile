@@ -51,7 +51,7 @@ pipeline {
             script{
                 def output_network_stack = cfnUpdate(stack:'final-project-network', file:'cloud-formation/network.yml', timeoutInMinutes:30, pollInterval: 15000)
                 def output_server_stack = cfnUpdate(stack:'final-project-servers', file:'cloud-formation/servers.yml', paramsFile:'cloud-formation/server-parameters.json', timeoutInMinutes:30, pollInterval:30000)
-                def outputs = cfnDescribe(stack:'final-project-servers')
+                def outputs = cfnDescribe(stack:'final-project-network')
                 echo "Server stack description: ${outputs}"
             }
         }
