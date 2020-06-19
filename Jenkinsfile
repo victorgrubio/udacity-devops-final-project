@@ -37,9 +37,9 @@ pipeline {
       steps{
         withAWS(region:'us-east-1', credentials:'9aee3fa1-090b-4274-a588-17d54bad0cf5') {
             script{
-                def response_network = cfnValidate(file:'cloud-formation/network.yaml')
+                def response_network = cfnValidate(file:'cloud-formation/network.yml')
                 echo "template description: ${response_network.description}"
-                def response_servers = cfnValidate(file:'cloud-formation/servers.yaml')
+                def response_servers = cfnValidate(file:'cloud-formation/servers.yml')
                 echo "template description: ${response_servers.description}"
             }   
         }
