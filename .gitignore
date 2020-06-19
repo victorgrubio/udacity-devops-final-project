@@ -1,4 +1,5 @@
-
+# Binaries
+*.zip
 
 # Security keys
 *.csv
