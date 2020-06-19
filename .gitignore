@@ -1,4 +1,5 @@
 # Security keys
+*.csv
 *.ppk
 *.pem
 
